@@ -1,4 +1,3 @@
-// src/components/CourseDetails1.js
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -7,40 +6,41 @@ function CourseDetails1() {
     <>
       <style>
         {`
-        .gradient-hr {
-          position: relative;
-          border: 0;
-          height: 3px;
-        }
-        .gradient-hr::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(to right, #4caf50, #2196f3);
-        }
-        .underline-animation {
-          position: relative;
-        }
-        .underline-animation::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: #2196f3;
-          transform: scaleX(0);
-          transition: transform 0.3s ease-in-out;
-        }
-        .underline-animation:hover::after {
-          transform: scaleX(1);
-        }
-        `}
+          /* Scoped CSS to avoid affecting other components */
+          .course-details .gradient-hr {
+            position: relative;
+            border: 0;
+            height: 3px;
+          }
+          .course-details .gradient-hr::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, #4caf50, #2196f3);
+          }
+          .course-details .underline-animation {
+            position: relative;
+          }
+          .course-details .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #2196f3;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+          }
+          .course-details .underline-animation:hover::after {
+            transform: scaleX(1);
+          }
+          `}
       </style>
-      <div className="bg-[#F2F2F2] min-h-screen">
+      <div className="course-details bg-[#F2F2F2] min-h-screen">
         <header className="bg-gradient-to-r from-[#3498db] to-[#2c3e50] text-white py-16 px-6 md:py-24 md:px-10 text-center font-serif">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 font-serif leading-tight">
             Pre-Medical Consultancy
@@ -73,7 +73,7 @@ function CourseDetails1() {
           </div>
         </div>
         <br />
-        <section className="mb-12 max-w-8xl mx-auto flex justify-center py-4 bg-slate-100">
+        <section className="mb-12 max-w-[1440px] mx-auto flex justify-center py-4 bg-slate-100">
           <div className="flex flex-col gap-8 max-w-8xl">
             <div className="p-6 bg-gray-50 py-8 shadow-xl rounded-2xl mt-5 border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-400">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -161,7 +161,7 @@ function CourseDetails1() {
           </div>
         </section>
 
-        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200">
+        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200 max-w-[1440px] mx-auto">
           <div className="mt-4 mb-4">
             <h4 className="text-2xl md:text-3xl font-bold mb-2 text-[#343A40]">
               Packages: Tailored Consultancy for Pre-Medical Aspirants
@@ -190,40 +190,22 @@ function CourseDetails1() {
               </div>
               <div className="bg-gray-100 shadow-lg rounded-lg p-6 mb-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
                 <h5 className="text-2xl font-bold text-[#343A40] mb-2">
-                  Advanced Guidance Package
+                  Comprehensive Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  Designed for students who require detailed support, including
-                  comprehensive exam preparation and application assistance.
+                  A complete package providing in-depth guidance and support
+                  throughout the pre-medical preparation process.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Detailed Career Assessment and Planning</li>
-                  <li>Comprehensive Medical Entrance Exam Strategies</li>
-                  <li>Personalized Counseling and Mentorship</li>
-                  <li>Application and Interview Preparation</li>
+                  <li>Personalized Study Plan</li>
+                  <li>Regular Counseling Sessions</li>
+                  <li>Mock Exams and Performance Analysis</li>
                 </ul>
-                <p className="font-bold text-2xl text-blue-600">$600</p>
-              </div>
-              <div className="bg-gray-100 shadow-lg rounded-lg p-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
-                <h5 className="text-2xl font-bold text-[#343A40] mb-2">
-                  Elite Success Package
-                </h5>
-                <p className="text-gray-600 mb-4 font-semibold">
-                  For students seeking comprehensive, all-inclusive support from
-                  exam preparation to final admission and beyond.
-                </p>
-                <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Intensive Medical Entrance Exam Coaching</li>
-                  <li>Complete Application and Interview Process Support</li>
-                  <li>Ongoing Counseling and Career Development</li>
-                  <li>Post-Admission Mentorship and Guidance</li>
-                </ul>
-                <p className="font-bold text-2xl text-blue-600">$900</p>
+                <p className="font-bold text-2xl text-blue-600">$750</p>
               </div>
             </div>
           </div>
         </section>
-
         <section className="py-16 text-center bg-gray-100 mt-12">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">

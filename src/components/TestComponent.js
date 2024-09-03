@@ -72,7 +72,7 @@ const TestComponent = () => {
         { answers },
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsInN1YiI6IjY2YzQ0MzkwNWFiODA2MzJkMTI2NDZiNSIsImlhdCI6MTcyNDgyMDYzNiwiZXhwIjoxNzI0OTA3MDM2fQ.mrjD_4_t2zFO4nJq5icgD1IHdA164tAOtj6NI4pTUu8`, // Replace with your actual token
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVybWFuMjAwMjEyMDJAZ21haWwuY29tIiwic3ViIjoiNjZkMDE3NDZmZTJlMTNlY2JiMjI1NzU0Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjUzNDU5ODgsImV4cCI6MTcyNTQzMjM4OH0.Re_m9ZRsS8oh_zHo41_CWwxstoNQ2FYDX6bHkbD5d0E`, // Replace with your actual token
           },
         }
       );
@@ -89,7 +89,7 @@ const TestComponent = () => {
         "http://localhost:4000/psychometric-assessment/results",
         {
           headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsInN1YiI6IjY2YzIxYTc0ZmQ5Yzg1NjllYjE0NGI1MiIsImlhdCI6MTcyNDY4MTkxNSwiZXhwIjoxNzI0NzY4MzE1fQ.EKmcZr2s9gGZyEapabmJ6U1r0pvUpxlP0C2DVjDIzSY `,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cGVybWFuMjAwMjEyMDJAZ21haWwuY29tIiwic3ViIjoiNjZkMDE3NDZmZTJlMTNlY2JiMjI1NzU0Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3MjUzNDU5ODgsImV4cCI6MTcyNTQzMjM4OH0.Re_m9ZRsS8oh_zHo41_CWwxstoNQ2FYDX6bHkbD5d0E `,
           },
         }
       );

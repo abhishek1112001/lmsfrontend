@@ -6,12 +6,12 @@ function ApplicationAssistance() {
     <>
       <style>
         {`
-        .gradient-hr {
+        .app-assistance-gradient-hr {
           position: relative;
           border: 0;
           height: 3px;
         }
-        .gradient-hr::before {
+        .app-assistance-gradient-hr::before {
           content: "";
           position: absolute;
           top: 0;
@@ -20,10 +20,10 @@ function ApplicationAssistance() {
           bottom: 0;
           background: linear-gradient(to right, #4caf50, #2196f3);
         }
-        .underline-animation {
+        .app-assistance-underline-animation {
           position: relative;
         }
-        .underline-animation::after {
+        .app-assistance-underline-animation::after {
           content: '';
           position: absolute;
           width: 100%;
@@ -34,7 +34,7 @@ function ApplicationAssistance() {
           transform: scaleX(0);
           transition: transform 0.3s ease-in-out;
         }
-        .underline-animation:hover::after {
+        .app-assistance-underline-animation:hover::after {
           transform: scaleX(1);
         }
         `}
@@ -52,14 +52,14 @@ function ApplicationAssistance() {
         <div className="bg-gray-100 py-4 px-4 text-gray-700 text-lg md:text-xl shadow-md">
           <div className="max-w-6xl lg:mx-1 mx-auto flex items-center space-x-2">
             <Link
-              className="underline-animation hover:text-blue-600 transition duration-300"
+              className="app-assistance-underline-animation hover:text-blue-600 transition duration-300"
               to={"/"}
             >
               Home
             </Link>
             <span className="text-gray-600">&gt;</span>
             <Link
-              className="underline-animation hover:text-blue-600 transition duration-300"
+              className="app-assistance-underline-animation hover:text-blue-600 transition duration-300"
               to={"/Service2"}
             >
               PG Medical Consultancy
@@ -71,13 +71,13 @@ function ApplicationAssistance() {
           </div>
         </div>
         <br />
-        <section className="mb-12 max-w-8xl mx-auto flex justify-center py-4 bg-slate-100">
+        <section className="mb-12 max-w-[1440px] mx-auto flex justify-center py-4 bg-slate-100">
           <div className="flex flex-col gap-8 max-w-8xl">
             <div className="p-6 bg-gray-50 py-8 shadow-xl rounded-2xl mt-5 border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-400">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black-500">
                 PG Medical Application Assistance
               </h2>
-              <hr className="gradient-hr mb-4" />
+              <hr className="app-assistance-gradient-hr mb-4" />
               <p className="text-lg mb-4 text-gray-600 leading-relaxed font-medium">
                 Our PG Medical Application Assistance service provides
                 comprehensive support throughout your application process for
@@ -99,9 +99,9 @@ function ApplicationAssistance() {
                 <h4 className="text-2xl md:text-3xl font-bold mb-2 text-gray-800">
                   Process: Step-by-Step Guide to Application Assistance
                 </h4>
-                <hr className="gradient-hr mb-4" />
+                <hr className="app-assistance-gradient-hr mb-4" />
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="border-r border-gray-300 pr-6  last:border-r-0">
+                  <div className="border-r border-gray-300 pr-6 last:border-r-0">
                     <div className="font-semibold text-blue-600 text-xl">
                       Step 1
                     </div>
@@ -110,7 +110,7 @@ function ApplicationAssistance() {
                       and career goals
                     </p>
                   </div>
-                  <div className="border-r border-gray-300 pr-6  last:border-r-0">
+                  <div className="border-r border-gray-300 pr-6 last:border-r-0">
                     <div className="font-semibold text-blue-600 text-xl">
                       Step 2
                     </div>
@@ -145,7 +145,7 @@ function ApplicationAssistance() {
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
                 Additional Application Support Services
               </h2>
-              <hr className="gradient-hr mb-4" />
+              <hr className="app-assistance-gradient-hr mb-4" />
               <p className="text-lg mb-4 font-semibold text-gray-600">
                 We provide a range of additional services to enhance your
                 application process.
@@ -161,12 +161,12 @@ function ApplicationAssistance() {
           </div>
         </section>
 
-        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200">
+        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200 max-w-[1440px] mx-auto">
           <div className="mt-4 mb-4">
             <h4 className="text-2xl md:text-3xl font-bold mb-2 text-[#343A40]">
               Packages: Tailored Application Assistance Options
             </h4>
-            <hr className="gradient-hr mb-4" />
+            <hr className="app-assistance-gradient-hr mb-4" />
             <p className="text-[#6C757D] font-medium">
               *Packages are designed to address various levels of application
               assistance needs and budget considerations.
@@ -188,32 +188,34 @@ function ApplicationAssistance() {
               </div>
               <div className="bg-gray-100 shadow-lg rounded-lg p-6 mb-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
                 <h5 className="text-2xl font-bold text-[#343A40] mb-2">
-                  Comprehensive Package
+                  Premium Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  Detailed assistance for a competitive application.
+                  Comprehensive support with additional services for your
+                  application.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>In-Depth Application Strategy</li>
-                  <li>Thorough Document Review and Editing</li>
-                  <li>Interview Preparation Session</li>
+                  <li>All Basic Package Services</li>
+                  <li>Detailed Application Review</li>
+                  <li>Interview Coaching</li>
+                  <li>Admission Test Guidance</li>
                 </ul>
                 <p className="font-bold text-2xl text-blue-600">$700</p>
               </div>
-              <div className="bg-gray-100 shadow-lg rounded-lg p-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
+              <div className="bg-gray-100 shadow-lg rounded-lg p-6 mb-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
                 <h5 className="text-2xl font-bold text-[#343A40] mb-2">
                   Elite Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  Full-service support for maximizing your admission chances.
+                  All-inclusive support for a seamless application experience.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Comprehensive Application Management</li>
-                  <li>Multiple Rounds of Document Revision</li>
-                  <li>Extensive Interview Coaching</li>
-                  <li>Admission Test Preparation Support</li>
+                  <li>All Premium Package Services</li>
+                  <li>Personalized Application Strategy</li>
+                  <li>Full Document Preparation</li>
+                  <li>Post-Submission Follow-up</li>
                 </ul>
-                <p className="font-bold text-2xl text-blue-600">$1200</p>
+                <p className="font-bold text-2xl text-blue-600">$1000</p>
               </div>
             </div>
           </div>
@@ -225,11 +227,11 @@ function ApplicationAssistance() {
               Additional Information
             </h2>
             <p className="text-xl mb-8 text-gray-600 leading-relaxed">
-              Our application assistance services are designed to provide expert
-              guidance and support throughout your PG medical application
-              process. We offer flexible options to suit your needs, including
-              online consultations. For more information on our services and how
-              we can assist you, please contact us.
+              Our consultancy services are designed to offer expert guidance and
+              support for your postgraduate medical career. We provide flexible
+              options to suit your needs, including online consultations. For
+              more information on our services and how we can assist you, please
+              contact us.
             </p>
             <Link
               to="/contactform"

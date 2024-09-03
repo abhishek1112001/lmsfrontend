@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FullStack from "../assets/images/FullStack.png";
 import instructor from "../assets/images/instructor.png";
 import instructor1 from "../assets/images/woman.png";
-import { mockCourseData } from "./mockCourseData";
 import {
   FaStar,
   FaCheck,
@@ -14,16 +13,18 @@ import {
 } from "react-icons/fa";
 
 // Course Page Component
-const CoursePage = ({ courseData, onEnrollClick }) => (
+const CoursePage = ({ onEnrollClick }) => (
   <div className="p-4 sm:p-8 rounded-lg bg-blue-200 bg-opacity-25 min-h-[380px]">
     <div className="max-w-7xl mx-auto">
       <div className="flex flex-col items-start mb-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          {courseData.title}
+          Full Stack Software Developer Professional Certificate
         </h1>
       </div>
       <p className="text-gray-700 mb-4 text-base sm:text-lg">
-        {courseData.description}
+        Prepare for a career as a full stack developer. Gain the in-demand
+        skills and hands-on experience to get job-ready in less than 4 months.
+        No prior experience required.
       </p>
       <div className="flex items-center space-x-3 mb-6">
         <img
@@ -40,7 +41,7 @@ const CoursePage = ({ courseData, onEnrollClick }) => (
           to="#"
           className="text-black hover:text-blue-800 font-semibold text-sm sm:text-base"
         >
-          {courseData.instructors.join(", ")}
+          Skills Network Team +11 more
         </Link>
       </div>
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
@@ -52,14 +53,13 @@ const CoursePage = ({ courseData, onEnrollClick }) => (
         </button>
         <p className="text-gray-600 text-sm sm:text-base">
           <FaUsers className="inline mr-2" />
-          {courseData.enrollmentCount.toLocaleString()} already enrolled
+          157,919 already enrolled
         </p>
       </div>
     </div>
   </div>
 );
-
-const CourseStats = ({ stats }) => (
+const CourseStats = () => (
   <section className="-mt-4 sm:-mt-14 bg-blue-200 bg-opacity-5 px-4">
     <div className="max-w-7xl mx-auto">
       <div className="bg-gray-50 rounded-lg shadow drop-shadow-xl p-4">
@@ -67,7 +67,7 @@ const CourseStats = ({ stats }) => (
           <div className="text-center">
             <FaBook className="text-3xl text-blue-600 mx-auto mb-2" />
             <span className="block text-lg font-semibold">
-              {stats.courseSeries}
+              12 course series
             </span>
             <p className="text-sm text-gray-600">
               Comprehensive career credential
@@ -75,14 +75,12 @@ const CourseStats = ({ stats }) => (
           </div>
           <div className="text-center border-l-2 border-gray-500">
             <FaStar className="text-3xl text-yellow-400 mx-auto mb-2" />
-            <span className="block text-lg font-semibold">{stats.rating}</span>
-            <p className="text-sm text-gray-600">
-              ({stats.reviews.toLocaleString()} reviews)
-            </p>
+            <span className="block text-lg font-semibold">4.6 ★</span>
+            <p className="text-sm text-gray-600">(6,341 reviews)</p>
           </div>
           <div className="text-center border-l-2 border-gray-500 max-[500px]:border-l-0">
             <FaUsers className="text-3xl text-green-600 mx-auto mb-2" />
-            <span className="block text-lg font-semibold">{stats.level}</span>
+            <span className="block text-lg font-semibold">Beginner level</span>
             <p className="text-sm text-gray-600">
               No prior experience required
             </p>
@@ -92,7 +90,7 @@ const CourseStats = ({ stats }) => (
             <span className="block text-lg font-semibold">
               Flexible schedule
             </span>
-            <p className="text-sm text-gray-600">{stats.duration}</p>
+            <p className="text-sm text-gray-600">4 months, 10 hours/week</p>
           </div>
         </div>
       </div>
@@ -101,12 +99,17 @@ const CourseStats = ({ stats }) => (
 );
 
 // Course Details About Component
-const CourseDetailsAbout = ({ aboutData }) => (
+const CourseDetailsAbout = () => (
   <div className="max-w-8xl mx-auto px-4 py-5">
     <section className="mb-12 drop-shadow-lg">
       <h2 className="text-3xl font-bold mb-6">What you'll learn</h2>
       <ul className="space-y-4">
-        {aboutData.learningOutcomes.map((item, index) => (
+        {[
+          "Master practical skills and tools used daily by full stack developers",
+          "Deploy and scale applications using Cloud Native methodologies",
+          "Develop front-end with HTML, CSS, JavaScript, React, and Bootstrap",
+          "Build your GitHub portfolio through hands-on projects and a capstone",
+        ].map((item, index) => (
           <li key={index} className="flex items-start">
             <FaCheck className="text-green-600 mt-1 mr-3 flex-shrink-0" />
             <span>{item}</span>
@@ -118,7 +121,19 @@ const CourseDetailsAbout = ({ aboutData }) => (
     <section className="pb-3">
       <h2 className="text-3xl font-bold mb-6">Skills you'll gain</h2>
       <div className="flex flex-wrap gap-3">
-        {aboutData.skills.map((skill) => (
+        {[
+          "Git",
+          "Cloud Applications",
+          "HTML",
+          "Cloud Computing",
+          "JavaScript",
+          "DevOps",
+          "CSS",
+          "React",
+          "Node.js",
+          "MongoDB",
+          "Express.js",
+        ].map((skill) => (
           <span
             key={skill}
             className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium drop-shadow-lg"
@@ -190,29 +205,93 @@ const Course = ({
 };
 
 // Course Description Component
-const CourseDescription = ({ courses }) => (
-  <div className="max-w-8xl mx-auto px-4 py-12">
-    <div className="bg-white p-8 rounded-lg shadow-md mb-8">
-      <h2 className="text-3xl font-bold mb-6">
-        Professional Certificate - 12 course series
-      </h2>
-      <p className="text-lg text-gray-700 mb-6">
-        Embark on a transformative journey into the world of software
-        development. This comprehensive program equips you with cutting-edge
-        skills in front-end, back-end, and cloud-native application development,
-        preparing you for a rewarding career in just 4 months.
-      </p>
-    </div>
-    <div className="space-y-6">
-      {courses.map((course) => (
-        <Course key={course.title} {...course} />
-      ))}
-    </div>
-  </div>
-);
+const CourseDescription = () => {
+  const courses = [
+    {
+      title: "Introduction to Cloud Computing",
+      hours: 12,
+      rating: 4.6,
+      ratingsCount: 6184,
+      Course: "Course 1",
+      description: [
+        "Define cloud computing and explain essential characteristics, history, the business case for cloud, and the emerging technologies enabled by cloud.",
+        "Describe the cloud service models- IaaS, PaaS, SaaS, and cloud deployment models- Public, Private, Hybrid; explain cloud infrastructure components.",
+        "Explain emerging Cloud related trends including Hybrid Multicloud, Microservices, Serverless, Cloud Native, DevOps, and Application Modernization.",
+        "List and describe services of popular cloud platforms including AWS, Microsoft Azure, Google Cloud, IBM Cloud, Alibaba Cloud, and others.",
+      ],
+      skills: [
+        "Python Programming",
+        "Application Development",
+        "Web Application",
+        "Flask",
+        "Artificial Intelligence (AI)",
+      ],
+    },
+    {
+      title: "Introduction to Web Development with HTML, CSS, JavaScript",
+      hours: 12,
+      rating: 4.6,
+      ratingsCount: 2257,
+      Course: "Course 2",
+      description: [
+        "Describe the Web Application Development Ecosystem and terminology like front-end developer, back-end, server-side, and full stack.",
+        "Identify the developer tools and integrated development environments (IDEs) used by web developers. ",
+        "Create and structure basic web pages using HTML and style them with CSS.",
+        "Develop dynamic web pages with interactive features using JavaScript. ",
+      ],
+      skills: [
+        "Software Engineering",
+        "Software Development",
+        "Code generation",
+        "AI prompts",
+        "Generative AI",
+      ],
+    },
+    {
+      title: "Getting Started with Git and GitHub",
+      hours: 10,
+      rating: 4.7,
+      ratingsCount: 1184,
+      Course: "Course 3",
+      description: [
+        " Describe version control and its place in social and collaborative coding and in DevOps.",
+        "Explain basic Git concepts such as repositories and branches used for distributed version control and social coding.",
+        "Create GitHub repositories and branches, and perform pull requests (PRs) and merge operations, to collaborate on a team project.",
+        "Build your portfolio by creating and sharing an open-source project on GitHub.",
+      ],
+      skills: [
+        "React (Web Framework)",
+        "Front-end Development",
+        "Web Development",
+        "JavaScript",
+        "User Interface",
+      ],
+    },
+  ];
 
+  return (
+    <div className="max-w-8xl mx-auto px-4 py-12">
+      <div className="bg-white p-8 rounded-lg shadow-md mb-8">
+        <h2 className="text-3xl font-bold mb-6">
+          Professional Certificate - 12 course series
+        </h2>
+        <p className="text-lg text-gray-700 mb-6">
+          Embark on a transformative journey into the world of software
+          development. This comprehensive program equips you with cutting-edge
+          skills in front-end, back-end, and cloud-native application
+          development, preparing you for a rewarding career in just 4 months.
+        </p>
+      </div>
+      <div className="space-y-6">
+        {courses.map((course) => (
+          <Course key={course.title} {...course} />
+        ))}
+      </div>
+    </div>
+  );
+};
 // Outcome Component
-const Outcome = ({ outcomeData }) => (
+const Outcome = () => (
   <div className="max-w-8xl mx-auto px-4 py-8 sm:py-12">
     <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 sm:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
       <div className="md:w-1/2 mb-8 md:mb-0">
@@ -220,7 +299,12 @@ const Outcome = ({ outcomeData }) => (
           Launch Your Career in Cloud Application Development
         </h2>
         <ul className="space-y-4">
-          {outcomeData.careerOutcomes.map((item, index) => (
+          {[
+            "Receive expert training from IBM professionals",
+            "Build a portfolio of impressive projects",
+            "Earn an industry-recognized certificate",
+            "Qualify for roles like Application Developer and Cloud Application Developer",
+          ].map((item, index) => (
             <li key={index} className="flex items-start">
               <FaCheck className="text-green-600 mt-1 mr-3 flex-shrink-0" />
               <span>{item}</span>
@@ -237,13 +321,13 @@ const Outcome = ({ outcomeData }) => (
         <div className="grid grid-cols-2 gap-4 text-center">
           <div className="bg-white p-4 rounded-lg shadow">
             <span className="block text-2xl font-bold text-blue-600">
-              {outcomeData.salaryInfo.median}
+              $114,000+
             </span>
             <span className="text-gray-600">median U.S. salary</span>
           </div>
           <div className="bg-white p-4 rounded-lg shadow">
             <span className="block text-2xl font-bold text-green-600">
-              {outcomeData.salaryInfo.jobOpenings}
+              66,000+
             </span>
             <span className="text-gray-600">U.S. job openings</span>
           </div>
@@ -252,70 +336,77 @@ const Outcome = ({ outcomeData }) => (
     </div>
   </div>
 );
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    role: "Software Engineer",
+    company: "Tech Innovations Inc.",
+    content:
+      "This course was a game-changer for my career. The hands-on projects and in-depth explanations of full-stack concepts gave me the confidence to land my dream job.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Michael Chen",
+    role: "Junior Developer",
+    company: "StartUp Solutions",
+    content:
+      "As someone with no prior coding experience, I was amazed at how quickly I could grasp complex topics. The instructors are top-notch and the course structure is excellent.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Emily Rodriguez",
+    role: "Freelance Web Developer",
+    company: "Self-employed",
+    content:
+      "The skills I learned in this course allowed me to transition into freelancing full-time. The section on cloud deployment was particularly valuable for my clients.",
+    rating: 2,
+  },
+];
 
 const TestimonialCard = ({ name, role, company, content, rating }) => (
-  <div className="flex-none w-full md:w-1/3 p-4">
-    <div className="bg-gradient-to-r from-white via-blue-50 to-blue-100 p-6 rounded-lg shadow-lg border-t-4 border-blue-600 transition-transform transform hover:scale-105 hover:shadow-2xl h-full">
-      <div className="flex items-center mb-4">
-        <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mr-4 shadow-lg">
-          {name.charAt(0)}
-        </div>
-        <div>
-          <h3 className="font-semibold text-xl text-blue-900">{name}</h3>
-          <p className="text-gray-600 text-sm">
-            {role} at {company}
-          </p>
-        </div>
+  //adadhwaddwadwawdawddddddddddddd
+  <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg drop-shadow-lg border-t-4 border-gray-300 border-r-4">
+    <div className="flex items-center mb-4">
+      <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold mr-4">
+        {name.charAt(0)}
       </div>
-      <div className="mb-4 text-gray-700">
-        <FaQuoteLeft className="text-blue-500 mb-2" />
-        <p className="italic">{content}</p>
+      <div>
+        <h3 className="font-semibold text-lg">{name}</h3>
+        <p className="text-gray-600 text-sm">
+          {role} at {company}
+        </p>
       </div>
-      <div className="flex items-center">
-        {[...Array(5)].map((_, i) => (
-          <FaStar
-            key={i}
-            className={i < rating ? "text-yellow-400" : "text-gray-300"}
-          />
-        ))}
-      </div>
+    </div>
+    <div className="mb-4">
+      <FaQuoteLeft className="text-blue-400 mb-2" />
+      <p className="text-gray-700">{content}</p>
+    </div>
+    <div className="flex items-center">
+      {[...Array(5)].map((_, i) => (
+        <FaStar
+          key={i}
+          className={i < rating ? "text-yellow-400" : "text-gray-300"}
+        />
+      ))}
     </div>
   </div>
 );
 
-const Testimonials = ({ testimonials }) => {
-  const scrollRef = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        scrollRef.current.scrollBy({
-          left: scrollRef.current.offsetWidth,
-          behavior: "smooth",
-        });
-      }
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-5 bg-gray-50">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
-        What Our Students Say
-      </h2>
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto scrollbar-hidden snap-x snap-mandatory w-full"
-      >
-        {testimonials.map((testimonial) => (
-          <TestimonialCard key={testimonial.id} {...testimonial} />
-        ))}
-      </div>
+const Testimonials = () => (
+  <div className="max-w-7xl mx-auto px-4 py-5 bg-gray-50">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 drop-shadow-md">
+      What Our Students Say
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {testimonials.map((testimonial) => (
+        <TestimonialCard key={testimonial.id} {...testimonial} />
+      ))}
     </div>
-  );
-};
-
+  </div>
+);
 // Popup Component
 const Popup = ({ show, onClose }) => {
   const [selectedDuration, setSelectedDuration] = useState(null);
@@ -355,9 +446,21 @@ const Popup = ({ show, onClose }) => {
   const { timeEstimate, monthlyCost, totalCost } =
     getContentForDuration(selectedDuration);
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full relative">
+    <div
+      className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50"
+      onClick={handleOverlayClick}
+    >
+      <div
+        className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 font-bold"
@@ -431,7 +534,6 @@ const Popup = ({ show, onClose }) => {
 const Course1 = () => {
   const [activeTab, setActiveTab] = useState("About");
   const [showPopup, setShowPopup] = useState(false);
-  const courseData = mockCourseData;
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -445,10 +547,21 @@ const Course1 = () => {
     setShowPopup(false);
   };
 
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === "Escape") {
+        closePopup();
+      }
+    };
+    document.addEventListener("keydown", handleEscapeKey);
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
   return (
     <div className="bg-gray-50 min-h-screen border-b-2 border-gray-400">
-      <CoursePage courseData={courseData} onEnrollClick={handleEnrollClick} />
-      <CourseStats stats={courseData.stats} />
+      <CoursePage onEnrollClick={handleEnrollClick} />
+      <CourseStats />
       <div className="max-w-6xl mx-auto px-4 mt-8 sm:mt-12 drop-shadow-xl rounded-md border-b-2 border-blue-500">
         <div className="flex space-x-4 sm:space-x-6 border-b-2 pb-4 mb-8 overflow-x-auto drop-shadow-md">
           {["About", "Outcomes", "Courses"].map((tab) => (
@@ -465,18 +578,12 @@ const Course1 = () => {
             </button>
           ))}
         </div>
-        {activeTab === "About" && (
-          <CourseDetailsAbout aboutData={courseData.about} />
-        )}
-        {activeTab === "Outcomes" && (
-          <Outcome outcomeData={courseData.outcomes} />
-        )}
-        {activeTab === "Courses" && (
-          <CourseDescription courses={courseData.courses} />
-        )}
+        {activeTab === "About" && <CourseDetailsAbout />}
+        {activeTab === "Outcomes" && <Outcome />}
+        {activeTab === "Courses" && <CourseDescription />}
       </div>
       <div className="py-8">
-        <Testimonials testimonials={courseData.testimonials} />
+        <Testimonials />
       </div>
 
       <Popup show={showPopup} onClose={closePopup} />

@@ -1,6 +1,5 @@
-// src/components/CourseDetails1.js
+// src/components/CourseDetails2.js
 import React from "react";
-// import Engineering from "../assets/images/Engineering.jpg";
 import { Link } from "react-router-dom";
 
 function CourseDetails2() {
@@ -8,12 +7,12 @@ function CourseDetails2() {
     <>
       <style>
         {`
-        .gradient-hr {
+        .course-details2 .gradient-hr {
           position: relative;
           border: 0;
           height: 3px;
         }
-        .gradient-hr::before {
+        .course-details2 .gradient-hr::before {
           content: "";
           position: absolute;
           top: 0;
@@ -22,10 +21,10 @@ function CourseDetails2() {
           bottom: 0;
           background: linear-gradient(to right, #4caf50, #2196f3);
         }
-        .underline-animation {
+        .course-details2 .underline-animation {
           position: relative;
         }
-        .underline-animation::after {
+        .course-details2 .underline-animation::after {
           content: '';
           position: absolute;
           width: 100%;
@@ -36,12 +35,12 @@ function CourseDetails2() {
           transform: scaleX(0);
           transition: transform 0.3s ease-in-out;
         }
-        .underline-animation:hover::after {
+        .course-details2 .underline-animation:hover::after {
           transform: scaleX(1);
         }
         `}
       </style>
-      <div className="bg-[#F2F2F2] min-h-screen">
+      <div className="course-details2 bg-[#F2F2F2] min-h-screen">
         <header className="bg-gradient-to-r from-[#3498db] to-[#2c3e50] text-white py-16 px-6 md:py-24 md:px-10 text-center font-serif">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 font-serif leading-tight">
             Medical School Application Assistance
@@ -74,7 +73,7 @@ function CourseDetails2() {
           </div>
         </div>
         <br />
-        <section className="mb-12 max-w-8xl mx-auto flex justify-center py-4 bg-slate-100">
+        <section className="mb-12 max-w-[1440px] mx-auto flex justify-center py-4 bg-slate-100">
           <div className="flex flex-col gap-8 max-w-8xl">
             <div className="p-6 bg-gray-50 py-8 shadow-xl rounded-2xl mt-5 border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-400">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 ">
@@ -160,7 +159,7 @@ function CourseDetails2() {
           </div>
         </section>
 
-        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200">
+        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200 max-w-[1440px] mx-auto">
           <div className="mt-4 mb-4">
             <h4 className="text-2xl md:text-3xl font-bold mb-2 text-[#343A40]">
               Packages: Different Application Packages and Pricing
@@ -191,38 +190,34 @@ function CourseDetails2() {
                   Intermediate Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  For students looking for more detailed support including
-                  personalized guidance and application help.
+                  For students needing more in-depth guidance and support.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Comprehensive Entrance Exam Preparation</li>
-                  <li>Personalized Course and College Recommendations</li>
-                  <li>Full Application Assistance</li>
-                  <li>Career Counseling Session</li>
+                  <li>Personalized Coaching</li>
+                  <li>Advanced Application Assistance</li>
+                  <li>Resume and Personal Statement Review</li>
                 </ul>
-                <p className="font-bold text-2xl text-blue-600">$500</p>
+                <p className="font-bold text-2xl text-blue-600">$600</p>
               </div>
-              <div className="bg-gray-100 shadow-lg rounded-lg p-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
+              <div className="bg-gray-100 shadow-lg rounded-lg p-6 mb-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
                 <h5 className="text-2xl font-bold text-[#343A40] mb-2">
                   Premium Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  For students seeking extensive support throughout the entire
-                  consultancy process.
+                  Comprehensive package for those seeking extensive support and
+                  counseling.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Intensive Entrance Exam Coaching</li>
-                  <li>Custom Course and College Planning</li>
-                  <li>Full Application Support with Document Review</li>
-                  <li>Personalized Career Counseling and Follow-up</li>
-                  <li>Post-Admission Support</li>
-                </ul>{" "}
-                <p className="font-bold text-2xl text-blue-600">$800</p>
+                  <li>One-on-One Coaching</li>
+                  <li>Complete Application Management</li>
+                  <li>Mock Interviews</li>
+                  <li>Priority Support</li>
+                </ul>
+                <p className="font-bold text-2xl text-blue-600">$900</p>
               </div>
             </div>
           </div>
         </section>
-
         <section className="py-16 text-center bg-gray-100 mt-12">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">

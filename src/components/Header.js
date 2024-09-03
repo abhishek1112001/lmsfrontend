@@ -30,13 +30,15 @@ const Header = () => {
   return (
     <>
       <div className="w-full bg-gradient-to-r from-[#3498db] to-[#2c3e50] flex justify-between items-center relative h-[150px] drop-shadow-lg">
-        <Link to="/" className="flex justify-center items-center text-white ">
+        <Link to="/" className="flex justify-center items-center text-white">
           <img
             src={logo}
-            className="w-17 h-17 md:w-28 md:h-28 mr-2"
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 mr-2"
             alt="logo"
           />
-          <h1 className="text-3xl md:text-4xl font-serif font-bold">LMS</h1>
+          <h1 className="text-3xl sm:text-3xl md:text-4xl font-serif font-bold">
+            LMS
+          </h1>
         </Link>
         {/* Three-dot Dropdown for Mobile */}
         <div className="flex md:hidden absolute top-[54px] right-5">
@@ -45,7 +47,7 @@ const Header = () => {
           </div>
           {/* Dropdown menu */}
           <div
-            className={`bg-white text-black font-serif w-[300px] absolute rounded-bl-lg justify-start p-5 shadow-lg  right-[-20px] top-[77px] z-10 ${
+            className={`bg-white text-black font-serif w-[250px] sm:w-[280px] md:w-[300px] absolute rounded-bl-lg justify-start p-5 shadow-lg right-[-20px] top-[77px] z-10 ${
               threeDotDropdownOpen ? "flex flex-col" : "hidden"
             }`}
           >
@@ -69,15 +71,15 @@ const Header = () => {
             </Link>
             <Link
               to="/service1"
-              className={` px-4 py-2 hover:bg-gray-200 ${
+              className={`px-4 py-2 hover:bg-gray-200 ${
                 servicesDropdownOpenThreeDot ? "block" : "hidden"
-              } `}
+              }`}
             >
               UG Medical Consultancy
             </Link>
             <Link
               to="/service2"
-              className={` px-4 py-2 hover:bg-gray-200 ${
+              className={`px-4 py-2 hover:bg-gray-200 ${
                 servicesDropdownOpenThreeDot ? "block" : "hidden"
               }`}
             >
@@ -85,35 +87,35 @@ const Header = () => {
             </Link>
             <Link
               to="/psychometrictest"
-              className="hover:bg-blue-600  hover:text-black  p-2 rounded mx-3 font-sans font-bold"
+              className="hover:bg-blue-600 hover:text-black p-2 rounded mx-3 font-sans font-bold"
             >
               Psychometric Test
             </Link>
             <Link
               to="/contactform"
-              className="hover:bg-blue-600  hover:text-black  p-2 rounded mx-3 font-sans font-bold"
+              className="hover:bg-blue-600 hover:text-black p-2 rounded mx-3 font-sans font-bold"
             >
               Contact Us
             </Link>
             <Link
               to="/login"
-              className="hover:bg-blue-600  hover:text-black  p-2 rounded mx-3 font-sans font-bold"
+              className="hover:bg-blue-600 hover:text-black p-2 rounded mx-3 font-sans font-bold"
             >
               Login/Signup
             </Link>
           </div>
         </div>
         {/* Main navigation for Desktop */}
-        <div className="hidden md:flex justify-end lg:justify-around font-sans items-center gap-3 flex-wrap text-white relative text-[24px] hover:m-2 hover:p-3 p-3 m-2">
+        <div className="hidden md:flex justify-end lg:justify-around font-sans items-center gap-3 flex-wrap text-white relative text-[24px] p-3 m-2">
           <Link
             to="/"
-            className="hover:bg-white rounded-xl hover:text-black	transition duration-300 py-2 px-2 font-sans"
+            className="hover:bg-white rounded-xl hover:text-black transition duration-300 py-2 px-2 font-sans"
           >
             <span className="underline-animation">Home</span>
           </Link>
           <Link
             to="/about"
-            className="hover:bg-white rounded-xl  hover:text-black transition duration-300  py-2 px-2 font-sans"
+            className="hover:bg-white rounded-xl hover:text-black transition duration-300 py-2 px-2 font-sans"
           >
             <span className="underline-animation">About</span>
           </Link>
@@ -128,11 +130,11 @@ const Header = () => {
               <div
                 className={`absolute bg-white top-[100px] left-[9.5px] lg:top-[77px] lg:left-0 text-black rounded shadow-lg mt-2 ${
                   servicesDropdownOpen ? "block" : "hidden"
-                } w-[340px] `}
+                } w-[300px] lg:w-[340px]`}
               >
                 <Link
                   to="/service1"
-                  className="block px-4 py-2 hover:bg-gray-200  transition-all font-sans"
+                  className="block px-4 py-2 hover:bg-gray-200 transition-all font-sans"
                 >
                   UG Medical Consultancy
                 </Link>
@@ -147,7 +149,7 @@ const Header = () => {
           </div>
           <Link
             to="/psychometrictest"
-            className="hover:bg-white rounded-xl  hover:text-black transition duration-300 py-3 px-3 font-sans"
+            className="hover:bg-white rounded-xl hover:text-black transition duration-300 py-3 px-3 font-sans"
           >
             <span className="underline-animation">Psychometric Test</span>
           </Link>
@@ -159,7 +161,7 @@ const Header = () => {
           </Link>
           <button
             onClick={toggleSidebar}
-            className="hover:bg-white rounded-xl hover:text-black transition duration-300 py-3 px-3 font-sans "
+            className="hover:bg-white rounded-xl hover:text-black transition duration-300 py-3 px-3 font-sans"
           >
             <span className="underline-animation">Login/Signup</span>
           </button>
@@ -173,7 +175,7 @@ const Header = () => {
         >
           <div className="fixed right-0 top-0 w-64 h-full bg-[#F9FAFB] shadow-lg p-5">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-bold hover:underline text-[#343A40] text-mono ">
+              <h2 className="text-xl font-bold hover:underline text-[#343A40] text-mono">
                 Login/Signup
               </h2>
               <button onClick={toggleSidebar} className="text-xl">

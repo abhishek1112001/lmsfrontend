@@ -20,10 +20,10 @@ function TrainingAndDev() {
           bottom: 0;
           background: linear-gradient(to right, #4caf50, #2196f3);
         }
-        .underline-animation {
+        .custom-underline-animation .underline-animation {
           position: relative;
         }
-        .underline-animation::after {
+        .custom-underline-animation .underline-animation::after {
           content: '';
           position: absolute;
           width: 100%;
@@ -34,7 +34,7 @@ function TrainingAndDev() {
           transform: scaleX(0);
           transition: transform 0.3s ease-in-out;
         }
-        .underline-animation:hover::after {
+        .custom-underline-animation .underline-animation:hover::after {
           transform: scaleX(1);
         }
         `}
@@ -51,7 +51,7 @@ function TrainingAndDev() {
         </header>
 
         <div className="bg-gray-100 py-4 px-4 text-gray-700 text-lg md:text-xl shadow-md">
-          <div className="max-w-6xl lg:mx-1 mx-auto flex items-center space-x-2">
+          <div className="max-w-6xl lg:mx-1 mx-auto flex items-center space-x-2 custom-underline-animation">
             <Link
               className="underline-animation hover:text-blue-600 transition duration-300"
               to={"/"}
@@ -72,7 +72,7 @@ function TrainingAndDev() {
           </div>
         </div>
         <br />
-        <section className="mb-12 max-w-8xl mx-auto flex justify-center py-4 bg-slate-100">
+        <section className="mb-12 max-w-[1440px] mx-auto flex justify-center py-4 bg-slate-100">
           <div className="flex flex-col gap-8 max-w-8xl">
             <div className="p-6 bg-gray-50 py-8 shadow-xl rounded-2xl mt-5 border border-gray-200 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-400">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-black-500">
@@ -161,7 +161,7 @@ function TrainingAndDev() {
           </div>
         </section>
 
-        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200">
+        <section className="p-6 bg-white shadow-xl rounded-2xl mt-10 border border-gray-200 max-w-[1440px] mx-auto">
           <div className="mt-4 mb-4">
             <h4 className="text-2xl md:text-3xl font-bold mb-2 text-[#343A40]">
               Training Packages: Tailored Medical Education Options
@@ -190,50 +190,48 @@ function TrainingAndDev() {
               </div>
               <div className="bg-gray-100 shadow-lg rounded-lg p-6 mb-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
                 <h5 className="text-2xl font-bold text-[#343A40] mb-2">
-                  Advanced Clinical Package
+                  Advanced Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  Specialized training for experienced medical professionals.
+                  Advanced training for experienced professionals aiming for
+                  specialization.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Advanced Diagnostic Techniques Course</li>
-                  <li>Subspecialty Clinical Skills Training</li>
-                  <li>Medical Leadership Workshop</li>
+                  <li>Advanced Diagnostic Techniques Workshop</li>
+                  <li>Leadership in Healthcare Course</li>
+                  <li>Medical Simulation and Practical Sessions</li>
                 </ul>
                 <p className="font-bold text-2xl text-blue-600">$1500</p>
               </div>
-              <div className="bg-gray-100 shadow-lg rounded-lg p-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
+              <div className="bg-gray-100 shadow-lg rounded-lg p-6 mb-6 border border-gray-300 h-full transition-all duration-300 hover:shadow-2xl">
                 <h5 className="text-2xl font-bold text-[#343A40] mb-2">
-                  Comprehensive Development Program
+                  Comprehensive Package
                 </h5>
                 <p className="text-gray-600 mb-4 font-semibold">
-                  Holistic training covering clinical, research, and
-                  professional development aspects.
+                  A complete training solution with in-depth modules for a
+                  holistic approach.
                 </p>
                 <ul className="list-disc list-inside text-gray-600 mb-4 font-medium">
-                  <li>Intensive Clinical Skills Bootcamp</li>
-                  <li>Advanced Research and Publication Workshop</li>
-                  <li>Medical Communication and Presentation Skills</li>
-                  <li>Personalized Mentorship Program</li>
+                  <li>Full Clinical Skills Development Program</li>
+                  <li>Comprehensive Research and Publication Course</li>
+                  <li>Advanced Leadership and Communication Training</li>
                 </ul>
                 <p className="font-bold text-2xl text-blue-600">$2500</p>
               </div>
             </div>
           </div>
         </section>
-
         <section className="py-16 text-center bg-gray-100 mt-12">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-3xl font-bold mb-6 text-gray-800">
               Additional Information
             </h2>
             <p className="text-xl mb-8 text-gray-600 leading-relaxed">
-              Our PG Medical Training and Development programs are designed to
-              provide comprehensive, up-to-date, and practical education to
-              enhance your medical career. We offer flexible learning options,
-              including in-person workshops and online modules. For more
-              information on our training programs and how we can support your
-              professional development, please contact us.
+              Our consultancy services are designed to offer expert guidance and
+              support for your postgraduate medical career. We provide flexible
+              options to suit your needs, including online consultations. For
+              more information on our services and how we can assist you, please
+              contact us.
             </p>
             <Link
               to="/contactform"
